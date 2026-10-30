@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardware needs</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Hardware needs</h1>
+  <p>Choosing and Running Local LLMs with Ollama &bull; Asdale Dynamics, LLC</p>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="index.html">Welcome</a></li>
+    <li><a href="02-what-is-ollama.html">What is Ollama?</a></li>
+    <li><a href="03-model-sizes.html">Model sizes</a></li>
+    <li><a href="04-hardware-needs.html" class="active">Hardware needs</a></li>
+    <li><a href="05-install-ollama.html">Install Ollama</a></li>
+    <li><a href="06-running-models.html">Run your first model</a></li>
+    <li><a href="07-privacy.html">Privacy</a></li>
+    <li><a href="worksheet.html">Model-selection worksheet</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <main>
+    <h2>Hardware needs</h2>
+    <p>You don't need a top-of-the-line computer to run a local LLM. What matters most is <strong>RAM</strong> (memory), and to a lesser extent, your <strong>GPU</strong> (graphics chip) and <strong>CPU</strong> (processor).</p>
+
+    <h3>The one number that matters: RAM</h3>
+    <p>A model needs to fit in memory to run. As a rule of thumb:</p>
+    <pre class="code">RAM needed ≈ (parameter count in billions) + 2 GB overhead</pre>
+    <p>So a 7B model needs roughly 9 GB of free RAM. A 3B model needs about 5 GB.</p>
+
+    <h3>How to check your RAM</h3>
+    <ul>
+      <li><strong>Mac:</strong> Apple menu → About This Mac → Memory</li>
+      <li><strong>Windows:</strong> Settings → System → About → Device specifications → Installed RAM</li>
+      <li><strong>Linux:</strong> Open a terminal and run <code class="code">free -h</code></li>
+    </ul>
+
+    <h3>Matching models to your computer</h3>
+    <table>
+      <tr><th style="width:20%">Total RAM</th><th>Comfortable models</th><th style="width:34%">Notes</th></tr>
+      <tr><td>4–8 GB</td><td><span class="model-chip">llama3.2:1b</span> <span class="model-chip">llama3.2:3b</span></td><td>Close other apps while running</td></tr>
+      <tr><td>8–16 GB</td><td><span class="model-chip">llama3.2:3b</span> <span class="model-chip">qwen2.5:7b</span> <span class="model-chip">llama3.1:8b</span></td><td>Sweet spot for beginners</td></tr>
+      <tr><td>16–32 GB</td><td><span class="model-chip">qwen2.5:7b</span> <span class="model-chip">llama3.1:8b</span> <span class="model-chip">deepseek-r1:14b</span></td><td>Can run larger or multiple models</td></tr>
+      <tr><td>32 GB+</td><td><span class="model-chip">llama3.1:70b</span> <span class="model-chip">deepseek-r1:32b</span></td><td>Serious local AI workstation</td></tr>
+    </table>
+
+    <h3>GPU vs CPU</h3>
+    <p>Ollama can run models on your CPU alone, but it's much faster with a GPU.</p>
+    <ul>
+      <li><strong>CPU only:</strong> Works everywhere, slower. Fine for small models and learning.</li>
+      <li><strong>GPU (NVIDIA, AMD, Apple Silicon):</strong> Much faster, especially for larger models.</li>
+      <li><strong>Apple Silicon Macs (M1/M2/M3/M4):</strong> The unified memory architecture makes these excellent for local LLMs — the GPU shares the system RAM.</li>
+    </ul>
+    <div class="callout">
+      <p>If you're unsure, just install Ollama and try. It will use whatever hardware is available.</p>
+    </div>
+
+    <h3>Disk space</h3>
+    <p>Models are large files. A 7B model is roughly 4–5 GB. A 14B model is about 8–9 GB. Make sure you have at least 20–30 GB of free disk space before downloading several models.</p>
+
+    <h3>Quick hardware checklist</h3>
+    <p>Before you install Ollama:</p>
+    <ul class="checkbox-row">
+      <li><input type="checkbox"> I know how much RAM my computer has</li>
+    </ul>
+    <ul class="checkbox-row">
+      <li><input type="checkbox"> I have at least 20 GB of free disk space</li>
+    </ul>
+    <ul class="checkbox-row">
+      <li><input type="checkbox"> I've picked a first model that fits my RAM (see <a href="03-model-sizes.html">Model sizes</a>)</li>
+    </ul>
+    <p>If your computer is on the smaller side, start with a 1B or 3B model. You can upgrade later.</p>
+
+    <p>Next step: <a href="05-install-ollama.html">Installing Ollama</a>.</p>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>Published by <strong>Asdale Dynamics, LLC</strong> — beginner-friendly AI education, books, and practical tools.<br>
+  MIT License. Copyright (c) 2026 Asdale Dynamics, LLC.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

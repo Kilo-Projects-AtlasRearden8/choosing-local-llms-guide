@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model sizes</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Model sizes</h1>
+  <p>Choosing and Running Local LLMs with Ollama &bull; Asdale Dynamics, LLC</p>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="index.html">Welcome</a></li>
+    <li><a href="02-what-is-ollama.html">What is Ollama?</a></li>
+    <li><a href="03-model-sizes.html" class="active">Model sizes</a></li>
+    <li><a href="04-hardware-needs.html">Hardware needs</a></li>
+    <li><a href="05-install-ollama.html">Install Ollama</a></li>
+    <li><a href="06-running-models.html">Run your first model</a></li>
+    <li><a href="07-privacy.html">Privacy</a></li>
+    <li><a href="worksheet.html">Model-selection worksheet</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <main>
+    <h2>Model sizes</h2>
+    <p>When you browse Ollama's model library, you'll see names like <code class="code">llama3.2:3b</code>, <code class="code">qwen2.5:7b-instruct-q4_K_M</code>, and <code class="code">deepseek-r1:14b</code>. These names tell you three things:</p>
+    <ol>
+      <li><strong>The model family</strong> (e.g., llama3.2, qwen2.5, deepseek-r1)</li>
+      <li><strong>The parameter count</strong> (e.g., 3b, 7b, 14b — the "b" means billion)</li>
+      <li><strong>The quantization</strong> (e.g., q4_K_M, q8_0 — how much the model is compressed)</li>
+    </ol>
+
+    <h3>Parameters: the "b" number</h3>
+    <p>Parameters are the internal connections a model learns during training. More parameters generally mean a smarter, more capable model — but also more memory and a slower computer to run it.</p>
+    <table>
+      <tr><th style="width:18%">Size</th><th style="width:24%">Rough parameters</th><th>What it's good for</th><th style="width:24%">Typical RAM needed</th></tr>
+      <tr><td>Small</td><td>1B–3B</td><td>Simple Q&amp;A, drafting emails, summarization</td><td>4–8 GB</td></tr>
+      <tr><td>Medium</td><td>7B–8B</td><td>General chat, writing, coding help</td><td>8–16 GB</td></tr>
+      <tr><td>Large</td><td>13B–14B</td><td>Stronger reasoning, coding, analysis</td><td>16–32 GB</td></tr>
+      <tr><td>Extra large</td><td>32B–70B+</td><td>Complex tasks, but needs serious hardware</td><td>32–80+ GB</td></tr>
+    </table>
+    <p><strong>Rule of thumb:</strong> A model needs roughly 1 GB of RAM per billion parameters, plus a little overhead for your operating system and other apps. A 7B model needs about 8 GB of free RAM to run comfortably.</p>
+
+    <h3>Quantization: the q4_K_M part</h3>
+    <p>Full-precision models are huge. Quantization compresses them so they use less memory and run faster, with a small trade-off in quality.</p>
+    <table>
+      <tr><th style="width:22%">Quantization</th><th style="width:18%">Meaning</th><th>Quality</th><th style="width:22%">Size</th></tr>
+      <tr><td><code class="code">q4_K_M</code></td><td>4-bit, medium</td><td>Good for most uses</td><td>~40–50% of full size</td></tr>
+      <tr><td><code class="code">q5_K_M</code></td><td>5-bit, medium</td><td>Better quality</td><td>~50–60%</td></tr>
+      <tr><td><code class="code">q8_0</code></td><td>8-bit</td><td>Near full quality</td><td>~80–90%</td></tr>
+      <tr><td><code class="code">f16</code></td><td>16-bit (full precision)</td><td>Best quality</td><td>Largest</td></tr>
+    </table>
+    <div class="callout">
+      <p><strong>For beginners:</strong> Start with a <code class="code">q4_K_M</code> or <code class="code">q5_K_M</code> model. They're small, fast, and perfectly good for learning.</p>
+    </div>
+
+    <h3>Reading a model name</h3>
+    <table>
+      <tr><th style="width:34%">Name</th><th>Breakdown</th></tr>
+      <tr><td><code class="code">llama3.2:3b</code></td><td>Llama 3.2, 3 billion parameters, default quantization</td></tr>
+      <tr><td><code class="code">qwen2.5:7b-instruct-q4_K_M</code></td><td>Qwen 2.5, 7B parameters, instruction-tuned, 4-bit quantization</td></tr>
+      <tr><td><code class="code">deepseek-r1:14b</code></td><td>DeepSeek R1, 14B parameters</td></tr>
+    </table>
+    <p>The <code class="code">instruct</code> or <code class="code">chat</code> suffix means the model is fine-tuned to follow instructions and converse — good for general use.</p>
+
+    <h3>Recommended first models</h3>
+    <p>If you're new to local LLMs, start here:</p>
+    <table>
+      <tr><th style="width:22%">Your RAM</th><th>Suggested model</th><th style="width:34%">Why</th></tr>
+      <tr><td>8 GB</td><td><span class="model-chip">llama3.2:3b</span> <button class="copy-model" data-model="llama3.2:3b">Copy</button></td><td>Tiny, fast, great for learning</td></tr>
+      <tr><td>16 GB</td><td><span class="model-chip">qwen2.5:7b-instruct-q4_K_M</span> <button class="copy-model" data-model="qwen2.5:7b-instruct-q4_K_M">Copy</button></td><td>Strong general model, comfortable fit</td></tr>
+      <tr><td>32 GB+</td><td><span class="model-chip">llama3.1:8b</span> <span class="model-chip">deepseek-r1:14b</span></td><td>More capable, still runs well</td></tr>
+    </table>
+    <p>You can always try a model and remove it if it's too slow. There's no cost to experiment.</p>
+
+    <h3>How to see available models</h3>
+    <pre class="code">ollama list</pre>
+    <p>To see what's in the Ollama library, visit <a href="https://ollama.com/library" target="_blank" rel="noopener">ollama.com/library</a></p>
+
+    <p>Next step: <a href="04-hardware-needs.html">Hardware needs</a> &mdash; check whether your computer can run one.</p>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>Published by <strong>Asdale Dynamics, LLC</strong> — beginner-friendly AI education, books, and practical tools.<br>
+  MIT License. Copyright (c) 2026 Asdale Dynamics, LLC.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

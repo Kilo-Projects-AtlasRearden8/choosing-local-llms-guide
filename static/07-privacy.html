@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Privacy</h1>
+  <p>Choosing and Running Local LLMs with Ollama &bull; Asdale Dynamics, LLC</p>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="index.html">Welcome</a></li>
+    <li><a href="02-what-is-ollama.html">What is Ollama?</a></li>
+    <li><a href="03-model-sizes.html">Model sizes</a></li>
+    <li><a href="04-hardware-needs.html">Hardware needs</a></li>
+    <li><a href="05-install-ollama.html">Install Ollama</a></li>
+    <li><a href="06-running-models.html">Run your first model</a></li>
+    <li><a href="07-privacy.html" class="active">Privacy</a></li>
+    <li><a href="worksheet.html">Model-selection worksheet</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <main>
+    <h2>Privacy</h2>
+    <p>One of the best reasons to run a local LLM with Ollama: <strong>nothing leaves your computer.</strong></p>
+
+    <h3>What "local" means</h3>
+    <p>When you chat with a model through Ollama:</p>
+    <ul>
+      <li>Your messages stay on your machine</li>
+      <li>The model runs on your CPU or GPU</li>
+      <li>Responses are generated locally</li>
+      <li>No data is sent to Ollama's servers (after the initial model download)</li>
+      <li>No company reads your conversations</li>
+    </ul>
+    <div class="callout">
+      <p>The only thing that leaves your computer is the initial download of the model file itself. After that, you can unplug your internet and Ollama keeps working.</p>
+    </div>
+
+    <h3>What Ollama does not do</h3>
+    <ul>
+      <li>Ollama does not require an account</li>
+      <li>Ollama does not ask for your email</li>
+      <li>Ollama does not sell your data</li>
+      <li>Ollama does not train on your conversations</li>
+      <li>Ollama does not phone home with your chat content</li>
+    </ul>
+
+    <h3>Where your data lives</h3>
+    <p>Ollama stores models and chat data on your computer, typically in:</p>
+    <ul>
+      <li><strong>Mac:</strong> <code class="code">~/.ollama</code></li>
+      <li><strong>Linux:</strong> <code class="code">~/.ollama</code></li>
+      <li><strong>Windows:</strong> <code class="code">C:\Users\&lt;yourname&gt;\.ollama</code></li>
+    </ul>
+    <p>You can back up, move, or delete this folder at any time.</p>
+
+    <h3>Comparison: local vs cloud</h3>
+    <table>
+      <tr><th style="width:34%"></th><th>Local (Ollama)</th><th>Cloud AI service</th></tr>
+      <tr><td>Data leaves your computer</td><td>No</td><td>Yes</td></tr>
+      <tr><td>Account required</td><td>No</td><td>Usually</td></tr>
+      <tr><td>Monthly fee</td><td>No</td><td>Often</td></tr>
+      <tr><td>Works offline</td><td>Yes</td><td>No</td></tr>
+      <tr><td>Company reads your chats</td><td>No</td><td>Possibly</td></tr>
+    </table>
+
+    <h3>Good privacy habits</h3>
+    <ul>
+      <li>Only download models from sources you trust (Ollama's official library is a good default)</li>
+      <li>Don't paste passwords, API keys, or other secrets into any AI — local or cloud</li>
+      <li>Keep Ollama updated</li>
+      <li>If you're sharing your computer, remember that anyone with access to your user account can read the local chat data</li>
+    </ul>
+    <div class="callout">
+      <p>This guide is educational. If you're handling sensitive personal information, consider talking to a professional about your specific privacy needs.</p>
+    </div>
+
+    <p>Next step: <a href="worksheet.html">Model-selection worksheet</a> &mdash; choose your first model thoughtfully.</p>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>Published by <strong>Asdale Dynamics, LLC</strong> — beginner-friendly AI education, books, and practical tools.<br>
+  MIT License. Copyright (c) 2026 Asdale Dynamics, LLC.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

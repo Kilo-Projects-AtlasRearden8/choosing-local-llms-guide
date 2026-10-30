@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is Ollama?</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>What is Ollama?</h1>
+  <p>Choosing and Running Local LLMs with Ollama &bull; Asdale Dynamics, LLC</p>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="index.html">Welcome</a></li>
+    <li><a href="02-what-is-ollama.html" class="active">What is Ollama?</a></li>
+    <li><a href="03-model-sizes.html">Model sizes</a></li>
+    <li><a href="04-hardware-needs.html">Hardware needs</a></li>
+    <li><a href="05-install-ollama.html">Install Ollama</a></li>
+    <li><a href="06-running-models.html">Run your first model</a></li>
+    <li><a href="07-privacy.html">Privacy</a></li>
+    <li><a href="worksheet.html">Model-selection worksheet</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <main>
+    <h2>What is Ollama?</h2>
+    <p><strong>Ollama</strong> is a free, open-source tool that lets you run large language models (LLMs) on your own computer.</p>
+    <p>Think of an LLM as a program that reads and writes text — like a very advanced autocomplete. Normally, these models run on giant servers owned by big tech companies. When you chat with one, your messages travel over the internet to their servers and back. Ollama flips that: it downloads a model to your computer and runs it there, locally.</p>
+
+    <h3>Why use Ollama?</h3>
+    <ul>
+      <li><strong>Privacy.</strong> Your chats never leave your machine. No company reads them.</li>
+      <li><strong>No account.</strong> No email, no credit card, no sign-up.</li>
+      <li><strong>No monthly fee.</strong> Ollama and most models are free to use.</li>
+      <li><strong>Works offline.</strong> Once a model is downloaded, you don't need the internet.</li>
+      <li><strong>Simple.</strong> One command downloads and runs a model. No complex setup.</li>
+    </ul>
+
+    <h3>What Ollama does</h3>
+    <p>Ollama handles three things for you:</p>
+    <ol>
+      <li><strong>Downloading models</strong> — It fetches the model files from the internet the first time you use one.</li>
+      <li><strong>Running models</strong> — It starts the model on your computer's CPU or GPU.</li>
+      <li><strong>Chatting</strong> — It gives you a simple way to send messages and get replies, either in your terminal or through apps that connect to it.</li>
+    </ol>
+
+    <h3>What Ollama is not</h3>
+    <ul>
+      <li>Ollama is not a model itself. It's the <em>runner</em> — the software that loads and executes models.</li>
+      <li>Ollama is not a website. It runs on your computer.</li>
+      <li>Ollama does not require an API key.</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>The client-server model:</strong> When Ollama is running, it acts as a small server on your computer (usually at <code class="code">http://localhost:11434</code>). You can talk to it directly in your terminal with <code class="code">ollama run &lt;model&gt;</code>, through other apps that connect to that local address, or through your own simple programs.</p>
+    </div>
+
+    <h3>Is it safe?</h3>
+    <p>Ollama is open source and widely used. Models are downloaded from Ollama's library, and you choose which ones to run. As with any software, only download models you trust, and keep Ollama updated.</p>
+
+    <p>Next step: <a href="03-model-sizes.html">Model sizes</a> &mdash; so you can pick one that fits your computer.</p>
+  </main>
+</div>
+
+<footer class="footer">
+  <p>Published by <strong>Asdale Dynamics, LLC</strong> — beginner-friendly AI education, books, and practical tools.<br>
+  MIT License. Copyright (c) 2026 Asdale Dynamics, LLC.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
